@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spirit Stamp • Workspace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="assets/spirit-seal.png" alt="Spirit Seal" class="seal" />
+    <div class="title-wrap">
+      <h1>Spirit Stamp</h1>
+      <p class="tag">Protecting the soul of your creations</p>
+    </div>
+  </header>
+
+  <nav>
+    <button data-target="text" class="nav-btn active">✍️ Write</button>
+    <button data-target="file" class="nav-btn">📂 Upload</button>
+    <button data-target="media" class="nav-btn">🎤 Record</button>
+    <button data-target="archive" class="nav-btn">📜 Archive</button>
+  </nav>
+
+  <main>
+    <!-- Write / Text -->
+    <section id="text" class="active panel">
+      <h2>Stamp Your Words</h2>
+      <input type="text" id="creatorNameText" placeholder="Your Name (optional)" />
+      <textarea id="textInput" placeholder="Write a poem, idea, contract notes, recipe, or melody — anything you want protected..."></textarea>
+      <input type="text" id="workTitleText" placeholder="Title of this work" />
+      <div class="controls">
+        <button id="stampTextBtn" class="primary">Stamp Text (create PDF)</button>
+        <button id="saveLocalBtn" class="secondary">Save Locally (session archive)</button>
+      </div>
+      <div id="textResult" class="result"></div>
+    </section>
+
+    <!-- File Upload -->
+    <section id="file" class="panel">
+      <h2>Upload & Stamp a File</h2>
+      <input type="text" id="creatorNameFile" placeholder="Your Name (optional)" />
+      <input type="text" id="workTitleFile" placeholder="Title of this work" />
+      <input type="file" id="fileInput" />
+      <div class="controls">
+        <button id="stampFileBtn" class="primary">Stamp File</button>
+      </div>
+      <div id="fileResult" class="result"></div>
+    </section>
+
+    <!-- Media Recorder -->
+    <section id="media" class="panel">
+      <h2>Record Audio / Video & Stamp</h2>
+      <input type="text" id="creatorNameMedia" placeholder="Your Name (optional)" />
+      <input type="text" id="workTitleMedia" placeholder="Title of this work" />
+      <video id="preview" autoplay muted playsinline></video>
+      <audio id="audioPreview" controls></audio>
+      <div class="controls">
+        <button id="startAudioRecBtn" class="primary">Start Audio Recording</button>
+        <button id="startVideoRecBtn" class="primary">Start Video Recording</button>
+        <button id="stopRecBtn" class="secondary" disabled>Stop & Stamp</button>
+        <button id="cancelRecBtn" class="ghost" disabled>Cancel</button>
+      </div>
+      <div id="mediaResult" class="result"></div>
+      <p class="hint">Tip: Recordings create .webm files (video) or .wav (audio). Chrome/Edge recommended.</p>
+    </section>
+
+    <!-- Archive -->
+    <section id="archive" class="panel">
+      <h2>Your Spirit Archives</h2>
+      <div class="controls">
+        <button id="refreshArchiveBtn" class="primary">Refresh Archive</button>
+      </div>
+      <ul id="archiveList" class="archive-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>© Spirit Stamp • Protecting the soul of your creations — Every vessel has its stamp.</small>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
